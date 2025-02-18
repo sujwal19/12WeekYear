@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+html , body{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-color: cadetblue;
+}
+
+button{
+    padding: 12px 24px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+
+
