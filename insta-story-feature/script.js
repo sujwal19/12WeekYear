@@ -8,15 +8,13 @@ var arr = [
 
 var storiyan = document.querySelector("#storiyan")
 
-
 var clutter = ""
 
 arr.forEach(function(elem, idx){
-    clutter += `<div id="story">
+    clutter += `            <div id="story">
                 <img id="${idx}" src="${elem.dp}" alt="">
-                </div>`
-});
-
+            </div>`
+})
 
 storiyan.innerHTML = clutter;
 
