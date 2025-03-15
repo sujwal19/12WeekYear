@@ -39,7 +39,7 @@ const date = futureDate.getDate();
 
 const day = weekdays[futureDate.getDay()];
 
-giveaway.textContent = `Giveaway ends on ${day}, ${date} ${month} ${year}, ${hours}:${minutes}PM`;   
+giveaway.textContent = `Time Runs Out: ${day}, ${date} ${month} ${year}, ${hours}:${minutes}PM`;   
 
 // future time in ms
 const futureTime = futureDate.getTime();
