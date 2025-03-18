@@ -187,12 +187,64 @@
 
 
         // var swap
-        let a = "suro";
-        let b = "chiyo";
+        // let a = "suro";
+        // let b = "chiyo";
+        // [a, b] = [b, a];
+        // console.log(a + " " + b);
+        
+        // REGEX // doesnot understand this but still copied
+        var re = /\w+\s/g;
+        var str = 'fee fi fo fum';
+        const [ fee, fi, fo ] = str.match(re);
+        //
 
-        [a, b] = [b, a];
+        // arrow function has 3 types:
 
-        console.log(a + " " + b);
+        // 1st = basic arrow without parameter
+        // const sds = () => {
+        //  log("hello")
+        // }
+
+        // 2nd = fat arrow fnc with one parameter
+        // no need to use () for one parameter
+        // var b = n => {
+        //     console.log(n);
+        // };
+        // b(23);
+
+        // 3rd = fat arrow fnc with implicit return (not curly brances used)
+        // if use () no need to write return keyword
+        // 12 will be returned
+        // var g = () => 12;
+        // console.log(g());
+
+        // 4th = arrow fnc with multiple parameters
+        // const gfg = (a, b, c) => {
+        //     console.log(a + b + c);
+        // }
+        // gfg(10, 20, 30);
+
+        // 5th = arrow fnc with default parameters
+        // const gfg = ( x, y, z = 30 ) => {
+        //     console.log( x + " " + y + " " + z);
+        // }
+
+        // gfg( 10, 20 );
+
+        // 6th = return object literals
+
+        // const makePerson = (firstName, lastName) => 
+        // ({ first: firstName, last: lastName });
+
+        // console.log(makePerson("sujwal", "dhungana"));
+
+        const fetchData = async () => {
+            const data = await fetch('https://api.github.com/users/sujwal19');
+            return data.json();
+        }
+
+        console.log(fetchData());
+        
         
 
     </script>
