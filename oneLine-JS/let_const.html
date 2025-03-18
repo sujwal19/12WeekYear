@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAR, LET AND CONST</title>
+    <style>
+        button {
+            background-color: cadetblue;
+            color: white;
+            font-size: 18px;
+            padding: 10px 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <button> Hey</button>
+
+    <script>
+        // let a = 2;
+        // const b = 3;
+        // var c = 3;
+        // sum(1, 2);
+        // console.log(window);
+        // console.log(d)
+        // function sum(a, b) {
+        //     let d1 = 34;
+        //     var d2 = 55;
+        //     var dsum = d1 + d2;
+        //     console.log(dsum);
+        // }
+        // sum(b, c)
+        // var d = 23;
+
+
+        // var character4 = function foo() {
+        //     if (true) {
+        //         var character1 = "Sujwal"  // function scope
+        //         let character2 = "Sooraj"  // Block scope
+        //         const character3 = "Bailey"  // Block Scope
+        //     }
+        //     console.log(character1);
+        //     // console.log(character2);  // not defined
+        //     // console.log(character3);   // not defined
+        // }
+        // character4();
+
+
+        // // in global scope
+        // console.log(this);
+
+        // // in function scope
+        // function abcd()  {
+        //     console.log(this);
+        // }
+        // abcd();
+
+        // // in method scope
+        // var obj  = {
+        //     name: "Sujwal",
+        //     age: 21,
+        //     someMethod: function abcd(){
+        //         console.log(this);
+        //     },
+        // }
+        // console.log(obj.someMethod);
+
+        // // event listener
+        // var button = document.querySelector("button")
+        // button.addEventListener("click", function(){
+        //     this.innerText = `hello World`;
+        // })
+        
+
+        // Var is function scope, it means that var can be used in inside a function from ifelse, loop
+        // var character4 = function foo() {
+
+        //     for (let i = 0; i < 3; i++) {
+        //         var goor = 20; 
+        //     }
+
+        //     function zoo(){
+        //         var character1 = "Sujwal"  // function scope
+        //         let character2 = "Sooraj"  // Block scope
+        //         const character3 = "Bailey"  // Block Scope
+        //     }
+        //     // console.log(goor); // since using var goor = 20
+        //     // console.log(character1);  // not defined
+        //     // console.log(character2);  // not defined
+        //     // console.log(character3);   // not defined
+        // }
+        // character4();
+
+        // Higher order Function
+        // function abcd(){
+        //     return function(){}
+        // }
+        // console.log(abcd(function(){}));
+
+
+        // Destructing
+        // In Array
+        // var a = [1, 2, 3, 4, 5];
+        // var [b, c, ...f] = a;
+        // console.log(b, c);
+        // console.log(f);
+        // console.log(a);
+
+        // In object || same for array just use []
+        // var obj = {
+        //     name: "Sujwal", 
+        //     age: 25,
+        //     child: {
+        //         name: "tristan",
+        //         age: undefined,
+        //     },
+        //     gym: undefined,
+        //     address: "btm",
+        //     dedication: "100%",
+        // }
+        // // : for rename, = for changing value
+        // // const { child: { name: cname } } = obj
+        // var { age: yearsold, name: fname, child: { name: cname} ,  gym : workout = "2 Weeks",...others } = obj;
+        // console.log(cname);
+        // console.log(yearsold);
+        // console.log(fname);
+        // console.log(workout);
+        // console.log(others);
+        
+        // spread operator
+        // let sd1 = [1, 2, 3, 4, 5, 6]
+        // let sd2 = [...sd1];
+        // console.log(sd1);
+
+        // rest operator
+        // function restOr(a, b, c, d, ...e) {
+        //     console.log(a);
+        //     console.log(b);
+        //     console.log(c);
+        //     console.log(d);
+        //     console.log(e);
+
+        // }
+        // restOr(1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+        // nested object destructuring
+        // const obj = {
+        //     parent : {
+        //         child : {
+        //             name: "tristan",
+        //             gym: "powerlifter", 
+        //             age: undefined
+        //         }
+        //     }
+        // }
+
+        // const { parent : { child : { name } } } = obj
+        // const { parent : { child : { gym } } } = obj
+        // const { parent : { child : { age = 12 } } } = obj
+        // console.log(name);
+        // console.log(gym);
+        // console.log(age);
+        
+        
+
+        // loops
+        // const users = [
+        //     {id: 1},
+        //     {id: 2},
+        //     {id: 3},
+        // ]
+
+        // for (const { id } of users) {
+        //     console.log(id + 5);
+        // }
+
+        // function args
+        // const user = { 
+        //     id: 0,
+        //     username: "sujwal",
+        // }
+        // function haveFun({ id, username}){
+        //     console.log(`hi ${username}`);
+        // }
+        // haveFun(user);
+
+
+        // var swap
+        let a = "suro";
+        let b = "chiyo";
+
+        [a, b] = [b, a];
+
+        console.log(a + " " + b);
+        
+
+    </script>
+</body>
+</html>
