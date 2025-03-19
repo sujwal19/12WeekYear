@@ -238,13 +238,21 @@
 
         // console.log(makePerson("sujwal", "dhungana"));
 
-        const fetchData = async () => {
-            const data = await fetch('https://api.github.com/users/sujwal19');
-            return data.json();
-        }
-
-        console.log(fetchData());
+        // const fetchData = async () => {
+        //     const data = await fetch('https://api.github.com/users/sujwal19');
+        //     return data.json();
+        // }
+        // console.log(fetchData());
         
+        
+        function alertFun(message) {
+
+        return () => {
+            alert(`${message}`)
+            }
+        }
+        const alertMom = alertFun("hi mum")
+        alertMom();
         
 
     </script>
