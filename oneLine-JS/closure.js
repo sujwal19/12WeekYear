@@ -15,7 +15,7 @@
 //     function inner() {
 //         return `Hello ${state}`;
 //     }
-//     return inner;
+//     return inner();
 // }
 // console.log(goodClosure());
 
@@ -51,7 +51,6 @@
 
 // const counter = (function () {
 //     let count = 0;
-
 //     return {
 //         increment: function() {
 //             count++;
@@ -65,20 +64,42 @@
 // })();
 
 // counter.increment();
-// counter.increment();
-// counter.reset();
+// // counter.increment();
+// // counter.reset();
+
+
+// const counter = (function (){
+//     let count = 0;
+
+//     return {
+//         increment: function(){
+//             count++;
+//             console.log(count);
+//         },
+//         reset: function() {
+//             count = 0;
+//             console.log(count);
+//         }
+//     }
+// })();
+
+// counter.increment()
+// counter.increment()
+// counter.reset()
+// counter.increment()
 
 
 // Closure and setTimeout
 
-// function createTimers(){
-//     for (let i = 0; i <= 5; i++) {
-//         setTimeout(() => {
-//             console.log(`Timer ${i}`);
-//         }, 1000);
+// function createTimer() {
+//     for (let i = 0; i <= 5; i++){
+//         setTimeout( () => {
+//             console.log(`Timer: ${i}`)
+//         }, 1000)
 //     }
 // }
-// createTimers()
+// createTimer()
+
 
 // Closure with this this keyword
 
@@ -115,9 +136,7 @@
 //         return a + b;
 //     };
 // }
-
 // // Undeclared variables (created without a keyword var, let, const), are always global, even if they are created inside a function.
-
 // const addTwo = add(10);   // First function call with 10
 // console.log(addTwo(35))  // second arguement as 35
 
@@ -154,38 +173,202 @@
 // add()
 // console.log(add())
 
-// function parentFnc(x) {
 
+// function parentFnc(x) {
 //     return function childFnc(y) {
 //         return x * y;
 //     }
 // }
 
 // const multiply5 = parentFnc(5);
-
 // console.log(multiply5(3));
 // console.log(multiply5(5));
 
 
-function bankAccount() {
-    let balance = 1000; // Private variable
 
-    return {
-        deposit: function(amount) {
-            balance += amount;
-            console.log(`Deposited: $${amount}, New Balance: $${balance}`);
-        },
-        withdraw: function(amount) {
-            if (balance >= amount) {
-                balance -= amount;
-                console.log(`Withdrew: $${amount}, New Balance: $${balance}`);
-            } else {
-                console.log("Insufficient funds");
-            }
-        }
-    };
-}
 
-const myAccount = bankAccount();
-myAccount.deposit(500); // Deposited: $500, New Balance: $1500
-myAccount.withdraw(200); // Withdrew: $200, New Balance: $1300
+// function bankAccount() {
+//     let balance = 1000   // Private variable
+
+//     return {
+//         deposit: function(amount) {
+//             balance += amount;
+//             console.log(`Deposited $${amount}, New Balance: $${balance}`);
+//         },
+//         withdraw: function(amount){
+//             if (balance >= amount){
+//                 balance -= amount;
+//                 console.log(`Withdraw $${amount}, New Balance: $${balance}`);
+//             }
+//             else {
+//                 console.log("Insufficient Funds");
+//             }
+//         }
+//     }
+// }
+
+// const myAccount = bankAccount()
+// myAccount.deposit(2000);
+// myAccount.withdraw(500);
+// myAccount.withdraw(1500);
+// myAccount.withdraw(1000);
+// myAccount.withdraw(0);
+// myAccount.deposit(2500);
+
+
+
+// function x(){
+//     var a = 7;
+//     // return function y(){                // 2.  both are same 1 and 2
+//     //     console.log(a);    
+//     // }
+//     function y(){
+//         console.log(a);
+//     }
+//     a = 100;
+//     return y;                       // 2.  both are same 1 and 2
+// }
+
+// var z = x();
+// console.log(z);
+// z();
+
+
+// function z(){
+//     function x(){
+//         var a = 7;
+//         function y(){
+//             console.log(a);
+//         }
+//         y()                 
+//     }
+//     x()
+// }
+// z();
+
+
+// function z(){
+//     let a = 7;
+
+//     a = 100;
+//     a = 300;
+//     return function y(){
+//         console.log(a);
+//     }
+// }
+
+// var x = z()
+// var g = z()
+// x()
+// g()
+
+
+// closure object
+// function z(){
+//     let obj = { value: 7 };
+
+//     obj.value = 100;
+//     return function y(){
+//         console.log(obj.value);
+//     }
+//     obj.value = 300;  // Dead code
+// }
+
+// var x = z();
+// var g = z();
+
+// x();  // Prints 100
+// g();  // Prints 100
+
+// // But modifying after function execution:
+// x().value = 500;
+// g();  // Would now print 500
+
+
+// object closure
+// function z(){
+//     let obj = { value: "Bheem" }
+
+//     obj.value = "Ujjwal"
+//     return {
+//         print: function(){ console.log(obj.value); },
+//         changeValue: function(val) { obj.value = val; }
+
+//     }
+// }
+
+// var x = z()
+// var g = z()
+
+// x.print()
+// g.print()
+
+// x.changeValue("Sujwal")
+// g.changeValue("Sujwal")
+
+// x.print()
+// g.print()
+
+
+// function z(){
+//     let arr = ["Mango", "Apple", "Banana"];
+
+//     let a = 6;
+//     arr = [1, 2, 3, a];
+
+//     return {
+//         print: function() {
+//             console.log(arr);
+//          },
+//         changeArr: function(arrayVal) { arr = arrayVal },
+//     }
+// }
+
+// var x = z();
+// var g = z();
+
+// x.print()
+// g.print()
+
+// x.changeArr(["Sujwal", "Ujjwal", "Bheem", ])
+
+// x.changeArr(["Classic", "RTR", "MT15"])
+
+// x.print()
+// g.print()
+
+
+// Write a closure that increments a counter each time it is called. This will help solidify your understanding of closures.
+// function z(){
+//     let count = 0;
+
+//     return function(){
+//         count++;
+//         return count;
+//     }
+// }
+
+// var g = z();
+// console.log(g());
+// console.log(g());
+// console.log(g());
+
+
+/// ----------------------------- 
+// function z(){
+//     let count = 0;
+
+//     function y(){
+//         count++;
+//         console.log(count);
+//     }
+//     return y;
+// }
+
+// let g = z()
+// g()
+// g()
+// g()
+
+
+// -----------------------------------
