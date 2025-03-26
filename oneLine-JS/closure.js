@@ -210,10 +210,6 @@
 // const myAccount = bankAccount()
 // myAccount.deposit(2000);
 // myAccount.withdraw(500);
-// myAccount.withdraw(1500);
-// myAccount.withdraw(1000);
-// myAccount.withdraw(0);
-// myAccount.deposit(2500);
 
 
 
@@ -355,20 +351,19 @@
 
 
 /// ----------------------------- 
-// function z(){
-//     let count = 0;
+function z(){
+    let count = 0;   // Pr
 
-//     function y(){
-//         count++;
-//         console.log(count);
-//     }
-//     return y;
-// }
+    function y(){
+        count++;
+        console.log(count);
+    }
+    return y;
+}
 
-// let g = z()
-// g()
-// g()
-// g()
+let g = z()
+g()
+
 
 
 // -----------------------------------

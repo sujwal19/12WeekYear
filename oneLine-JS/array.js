@@ -408,7 +408,7 @@ function checkAges(age){
 // console.log(mapAlbums);
 
 //...
-let arr = [3, 4, 5, 6];
+// let arr = [3, 4, 5, 6];
 
 // for (let i = 0; i < arr.length; i++){
 //     arr[i] = arr[i] * 3;
@@ -422,21 +422,253 @@ let arr = [3, 4, 5, 6];
 // console.log(modifiedArr);
 
 
-let users = [
-    {firstName : "Susan", lastName: "Steward"},
-    {firstName : "Daniel", lastName: "Longbottom"},
-    {firstName : "Jacob", lastName: "Black"}
-];
+// let users = [
+//     {firstName : "Susan", lastName: "Steward"},
+//     {firstName : "Daniel", lastName: "Longbottom"},
+//     {firstName : "Jacob", lastName: "Black"}
+// ];
 
-let usersMap = users.map( (elem) => {
-    return `${elem.firstName} ${elem.lastName}`;
-} )
+// let usersMap = users.map( (elem) => {
+//     return `${elem.firstName} ${elem.lastName}`;
+// }, this )
 
-console.log(usersMap);
+// console.log(usersMap);
+
+// let arr = [2, 3, 5, 7]
+
+// arr.map(function(element, index, array){
+//     console.log(this);
+//     console.log(element);
+//     console.log(index);
+//     console.log(array);
+//     // return element;
+// }, 80)
+
+
+// let albums = [
+//     {artist: 'Frank Zappa', title: 'Apostrophe'},
+//     {artist: 'Frank Zappa', title: 'One Size Fits All'}
+// ];
+
+// let albumsCopy = JSON.parse(JSON.stringify(albums));
+// console.log(albumsCopy);
+
+// console.log(albums[1] === albumsCopy[1])
+
+// -------------------------------------------------------------
+
+// include() Method Syntax
+// array.includes(value, startingIndex: "means till how many values")   // case-sensitive
+
+// let dMinor = ['D', 'E', 'G', 'A', 'F', 'B', 'C', 'A'];
+
+// let dLog = dMinor.includes('E');
+// console.log(dLog);  // true
+
+// console.log(dLog);
+// console.log(dLog2);
+
+// IndexOf() Method Syntax
+// array.indexOf(value, startingIndex)..
+// deafult value of startingIndex is 0
+
+// let dindexOf1 = dMinor.indexOf('H');  // -1 :because item not found
+//  console.log(dindexOf1);
+
+// let dindexOf2 = dMinor.indexOf('F', 2);
+// console.log(dindexOf2);
+
+// let dindexOf3 = dMinor.indexOf('A', 5);
+// console.log(dindexOf3);
+// It returns only the first index at which the specified value is found
+//---------------------------------------------------------------------------
+
+// let nobleGases = ['He', 'Ne', 'Ar', 'kR', 'Xn'];
+
+// everyNoble = nobleGases.every( el => typeof el == 'string' )
+// console.log(everyNoble);   // true
+
+// everyNoble = nobleGases.some( el => el == 'Ar' )
+// console.log(everyNoble);     // true
+//  The some() method is very similar. It iterates through the array, testing if some elements – not all of them – meet the requirements implemented by a callback function.
+
+
+//----------------------------------
+// filter() Mehtod syntax:
+// array.filter((element, index, array) => {})
 
 
 
+// let animals = [
+//     {no: 1, track: 'Pigs on the Wing (Part One)'},
+//     {no: 2, track: 'Dogs'},
+//     {no: 3, track: 'Pigs (Three Different Ones)'},
+//     {no: 4, track: 'Sheep'},
+//     {no: 5, track: 'Pigs on the Wing (Part Two)'}
+// ];
+
+// let filteredAnimal = animals.filter( el => el['track'].includes("Pigs") )
+// console.log(filteredAnimal);
+
+// let tracks = animals.map((el) => el['track'])
+// console.log(tracks);
+
+// learn foreach/ reduce()
+// foreach syntax
+// array.forEach(function(currentValue, index, arr), thisValue)
+// foreach returns undefined
+
+
+// let animals = [
+    // {no: 1, track: 'Pigs on the Wing (Part One)'},
+    // {no: 2, track: 'Dogs'},
+    // {no: 3, track: 'Pigs (Three Different Ones)'},
+    // {no: 4, track: 'Sheep'},
+    // {no: 5, track: 'Pigs on the Wing (Part Two)'}
+// ];
+// let eg1= animals.forEach(element => {
+//     return;
+// });
+// console.log(eg1);  // undefined
+
+
+// const apps = ['Calculator', 'Messaging', 'Clock'];
+
+// apps.forEach(function(app, index) {
+//   console.log(index, app);
+// });
+
+
+// const apps = ['Calculator', 'Messaging', 'Clock', 'Maps'];
+
+// let appLoop = apps.forEach((app, idx, arr)=>{
+//     if (idx < 2) {
+//         return false
+//     }
+//     console.log(arr, app);
+// })
+
+// console.log(appLoop);
+
+
+const staffsDetails = [
+    { name: "Jam Josh", age: 44, salary: 4000, currency: "USD" },
+    { name: "Justina Kap", age: 34, salary: 3000, currency: "USD" },
+    { name: "Chris Colt", age: 37, salary: 3700, currency: "USD" },
+    { name: "Jane Doe", age: 24, salary: 4200, currency: "USD" }
+  ];
+
+// let staffLog = staffsDetails.forEach(( { name }, idx ) => {
+//     let sentence = `Index ${idx}: I am ${name}, a staff of Royal Suites.`;
+//     console.log(sentence);    
+// })
+
+// console.log(staffLog);
+
+
+// const scores = [ 12, 55, 70, 47 ];
+// let total = 0;
+// scores.forEach((score)=> {
+//     total += score;
+// });
+// console.log(total);
+
+
+// let totalSalary = 0;
+// staffsDetails.forEach(( { salary } ) => {
+//     totalSalary += salary;
+// });
+// console.log(totalSalary + " USD");
 
 
 
+// ------------------------------------------------
+// Arrays (methods, mutability, deep copy vs shallow copy)Arrays (methods, mutability, deep copy vs shallow copy)
+
+
+// deep copy = copy all values and disconnect from original variables
+// shallow copy = copy the reference of values, it is connected to original variable
+
+// Object.assign({}) = same as spread operator (...) pass the object to copy as second arguement
+
+// const a = {
+//     en: "Bye",
+//     de: 'Tschuss'
+// }
+
+// let b = Object.assign({}, a)
+// b.de = "Chang"
+
+// console.log(b.de);
+// console.log(a.de);
+
+
+//------
+// Pitfall Nested Objects
+// When you have a nested object (or array) and you copy it, nested objects inside that object will not be copied, since they are only pointers / references. 
+
+// const a = {
+//     foods: {
+//         dinner: {
+//             heavy: "bhat",
+//         }
+//     },
+//     drink: {
+//         shake: {
+//             medium: "Mango",
+//         }
+//     },
+// }
+
+// // let b = {...a}
+// let b = { dinner: {...a.foods.dinner} }
+
+// b.dinner.heavy = "Soup";
+
+// console.log(b.dinner);
+// console.log(a.foods.dinner);
+
+// console.log(b);
+// console.log(a);
+//...................................................
+
+// const a = {
+//     foods: {
+//       dinner: 'Pasta'
+//     }
+//   }
+
+// let b = JSON.parse(JSON.stringify(a))
+// b.foods.dinner = 'Soup'
+
+// console.log(b.foods.dinner);
+// console.log(a.foods.dinner);
+
+//..................................................
+const a = [1,2,3]
+// let b = a.map(el => el)
+
+// b[1] = 4
+
+// console.log(b[1]);   // 4
+// console.log(a[1]);   // 2
+
+// OR
+
+const b = a.map( (el, idx) => idx === 1 ? 4 : el )
+
+console.log(b[1]);  // 4
+console.log(a[1]);  // 2
+
+// slice = array.slice(0) = shallow copy
+
+// For nested arrays use: 
+// JSON.parse(JSON.stringify(someArray))
+
+
+// Mutable Arrays
+// push = modifies
+// pop = modifies
+// unshift = modifies
+// shift = modifies
 
